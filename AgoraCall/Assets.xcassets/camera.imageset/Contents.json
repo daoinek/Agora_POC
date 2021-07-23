@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "camera@4x.png",
       "idiom" : "universal"
     }
   ],
