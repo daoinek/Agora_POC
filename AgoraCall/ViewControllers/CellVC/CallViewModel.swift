@@ -37,12 +37,14 @@ class CallViewModel: NSObject {
     func setupLocalVideo(in localContainer: UIView) {
         let view = UIView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: localContainer.frame.size))
         localVideo = AgoraRtcVideoCanvas()
-        localVideo!.view = view
-        localVideo!.renderMode = .hidden
-        localVideo!.uid = 0
-        localContainer.addSubview(localVideo!.view!)
-        agoraKit.setupLocalVideo(localVideo)
-        agoraKit.startPreview()
+        localVideo?.view = view
+        localVideo?.renderMode = .hidden
+        localVideo?.uid = 0
+        if let localView = localVideo?.view {
+            localContainer.addSubview(localView)
+            agoraKit.setupLocalVideo(localVideo)
+            agoraKit.startPreview()
+        }
     }
     
     
@@ -60,10 +62,12 @@ extension CallViewModel {
     func rtcEngine(didJoinedOfUid uid: UInt, parent: UIView) {
         let view = UIView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: parent.frame.size))
         remoteVideo = AgoraRtcVideoCanvas()
-        remoteVideo!.view = view
-        remoteVideo!.renderMode = .hidden
-        remoteVideo!.uid = uid
-        parent.addSubview(remoteVideo!.view!)
-        agoraKit.setupRemoteVideo(remoteVideo!)
+        remoteVideo?.view = view
+        remoteVideo?.renderMode = .hidden
+        remoteVideo?.uid = uid
+        if let remoteView = remoteVideo?.view, let remote = remoteVideo {
+            parent.addSubview(remoteView)
+            agoraKit.setupRemoteVideo(remote)
+        }
     }
 }

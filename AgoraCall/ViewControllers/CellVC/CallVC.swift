@@ -102,7 +102,7 @@ class CallVC: UIViewController {
     }
     
     
-    func removeFromParent(_ canvas: AgoraRtcVideoCanvas?) -> UIView? {
+    @discardableResult func removeFromParent(_ canvas: AgoraRtcVideoCanvas?) -> UIView? {
         if let it = canvas, let view = it.view {
             let parent = view.superview
             if parent != nil {
@@ -114,13 +114,14 @@ class CallVC: UIViewController {
     }
     
     private func switchView(_ canvas: AgoraRtcVideoCanvas?) {
+        guard let canvas_view = canvas?.view else { return }
         let parent = removeFromParent(canvas)
         if parent == localContainer {
-            canvas!.view!.frame.size = remoteContainer.frame.size
-            remoteContainer.addSubview(canvas!.view!)
+            canvas_view.frame.size = remoteContainer.frame.size
+            remoteContainer.addSubview(canvas_view)
         } else if parent == remoteContainer {
-            canvas!.view!.frame.size = localContainer.frame.size
-            localContainer.addSubview(canvas!.view!)
+            canvas_view.frame.size = localContainer.frame.size
+            localContainer.addSubview(canvas_view)
         }
     }
     
@@ -148,7 +149,7 @@ class CallVC: UIViewController {
     
     @IBAction func didClickvideoButton(_ sender: UIButton) {
         sender.isSelected.toggle()
-        videoIsDisabled ? viewModel.agoraKit.enableVideo() : viewModel.agoraKit.disableVideo()
+        let _ = videoIsDisabled ? viewModel.agoraKit.enableVideo() : viewModel.agoraKit.disableVideo()
         videoIsDisabled = !videoIsDisabled
         isRemoteVideoRender = !videoIsDisabled
         isLocalVideoRender = !videoIsDisabled

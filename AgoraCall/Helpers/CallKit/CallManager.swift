@@ -11,7 +11,7 @@ import CallKit
 import AVFoundation
 
 
-protocol CallManagerDelegate: class {
+protocol CallManagerDelegate: AnyObject {
     func callManager(_ sender: CallManager, userDidJoin userId: String)
     func callManager(_ sender: CallManager, didReceiveData data: Data)
     func callDidStart(_ sender: CallManager)
@@ -80,7 +80,7 @@ class CallManager: NSObject, CXProviderDelegate {
     }
 
     func provider(_ provider: CXProvider, perform action: CXStartCallAction) {
-        guard let call = currentCall else {
+        guard let _ = currentCall else {
             action.fail()
             reset()
             assertionFailure("Call must be set before call can be started")
@@ -93,7 +93,7 @@ class CallManager: NSObject, CXProviderDelegate {
     }
 
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-        guard let currentCall = currentCall else {
+        guard let _ = currentCall else {
             action.fail()
             reset()
             assertionFailure("Call must be set before call can be answered")
