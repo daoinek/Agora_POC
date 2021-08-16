@@ -6,6 +6,7 @@ target 'AgoraCall' do
   use_frameworks!
 
   # Pods for AgoraCall
-  pod 'AgoraRtcEngine_iOS', '3.4.1'
+  pod 'AgoraRtcEngine_iOS'
+  pod 'Alamofire'
 
 end

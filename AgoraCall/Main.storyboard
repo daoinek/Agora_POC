@@ -34,9 +34,6 @@
                                 <state key="normal" image="call">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="NxL-QO-rqf"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FA7-F9-n1V"/>
@@ -54,6 +51,7 @@
                     <connections>
                         <outlet property="callBtn" destination="I3w-Pj-SzD" id="y8O-Bq-gyw"/>
                         <outlet property="tableView" destination="nBG-Fm-i86" id="hWS-V6-qxK"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showCallVC" id="PBi-Xj-Mb4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDl-4B-MgQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -63,7 +61,7 @@
         <!--CallVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="CallVC" customModule="AgoraCall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CallVC" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="CallVC" customModule="AgoraCall" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

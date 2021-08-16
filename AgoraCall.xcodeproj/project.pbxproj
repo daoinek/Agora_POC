@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6505161B26C1F75000879532 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505161A26C1F75000879532 /* AppDelegate+Extension.swift */; };
 		656A184E26AA57D100A3F45D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A184D26AA57D100A3F45D /* AppDelegate.swift */; };
 		656A185026AA57D100A3F45D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A184F26AA57D100A3F45D /* SceneDelegate.swift */; };
 		656A185A26AA57D400A3F45D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656A185826AA57D400A3F45D /* LaunchScreen.storyboard */; };
@@ -18,14 +19,31 @@
 		656A186F26AA587C00A3F45D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A186D26AA587C00A3F45D /* Reachability.swift */; };
 		656A187126AA589000A3F45D /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A187026AA589000A3F45D /* Int+Extension.swift */; };
 		656A187326AA58A300A3F45D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656A187226AA58A300A3F45D /* Assets.xcassets */; };
-		656A187826AA5AC200A3F45D /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A187726AA5AC200A3F45D /* Call.swift */; };
 		656A187A26AA5AD200A3F45D /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A187926AA5AD200A3F45D /* CallManager.swift */; };
-		656A187C26AA5AE300A3F45D /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A187B26AA5AE300A3F45D /* SoundManager.swift */; };
+		65C76BA526C049DE0010BDDB /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C76BA426C049DE0010BDDB /* CallKit.framework */; };
+		65C76BA726C04E3A0010BDDB /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C76BA626C04E3A0010BDDB /* Data+Extension.swift */; };
+		65C76BAB26C063A80010BDDB /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C76BAA26C063A80010BDDB /* UIApplication+Extension.swift */; };
+		65CB35E526BD40900024ECBC /* PushApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB35E426BD40900024ECBC /* PushApiManager.swift */; };
+		65CB35F826BD5BF80024ECBC /* ChannelNameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB35F726BD5BF80024ECBC /* ChannelNameGenerator.swift */; };
 		92F4C24DCE519BD1A9322FF7 /* Pods_AgoraCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0CA0F993508F06DC645FC9 /* Pods_AgoraCall.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		65CB35F326BD5AEE0024ECBC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0BE61A33A82B79714988759F /* Pods-AgoraCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraCall.debug.xcconfig"; path = "Target Support Files/Pods-AgoraCall/Pods-AgoraCall.debug.xcconfig"; sourceTree = "<group>"; };
+		6505161A26C1F75000879532 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		656A184A26AA57D100A3F45D /* AgoraCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgoraCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656A184D26AA57D100A3F45D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		656A184F26AA57D100A3F45D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,9 +57,13 @@
 		656A186D26AA587C00A3F45D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		656A187026AA589000A3F45D /* Int+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		656A187226AA58A300A3F45D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		656A187726AA5AC200A3F45D /* Call.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
 		656A187926AA5AD200A3F45D /* CallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
-		656A187B26AA5AE300A3F45D /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		65C76BA426C049DE0010BDDB /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
+		65C76BA626C04E3A0010BDDB /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		65C76BAA26C063A80010BDDB /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		65CB35E426BD40900024ECBC /* PushApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushApiManager.swift; sourceTree = "<group>"; };
+		65CB35E626BD47480024ECBC /* AgoraCall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AgoraCall.entitlements; sourceTree = "<group>"; };
+		65CB35F726BD5BF80024ECBC /* ChannelNameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelNameGenerator.swift; sourceTree = "<group>"; };
 		E26E57908B42E5F34FECCA46 /* Pods-AgoraCall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraCall.release.xcconfig"; path = "Target Support Files/Pods-AgoraCall/Pods-AgoraCall.release.xcconfig"; sourceTree = "<group>"; };
 		FC0CA0F993508F06DC645FC9 /* Pods_AgoraCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AgoraCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -52,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92F4C24DCE519BD1A9322FF7 /* Pods_AgoraCall.framework in Frameworks */,
+				65C76BA526C049DE0010BDDB /* CallKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,9 +93,20 @@
 		47A5DF6FCFEA5104A77A8680 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65C76BA426C049DE0010BDDB /* CallKit.framework */,
 				FC0CA0F993508F06DC645FC9 /* Pods_AgoraCall.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6505161926C1F5AD00879532 /* AgoraModule */ = {
+			isa = PBXGroup;
+			children = (
+				6505161A26C1F75000879532 /* AppDelegate+Extension.swift */,
+				656A186326AA583F00A3F45D /* ViewControllers */,
+				656A186B26AA587300A3F45D /* Helpers */,
+			);
+			path = AgoraModule;
 			sourceTree = "<group>";
 		};
 		656A184126AA57D100A3F45D = {
@@ -98,10 +132,10 @@
 			children = (
 				656A184D26AA57D100A3F45D /* AppDelegate.swift */,
 				656A184F26AA57D100A3F45D /* SceneDelegate.swift */,
+				6505161926C1F5AD00879532 /* AgoraModule */,
+				65CB35E626BD47480024ECBC /* AgoraCall.entitlements */,
 				656A186126AA583100A3F45D /* Main.storyboard */,
 				656A185826AA57D400A3F45D /* LaunchScreen.storyboard */,
-				656A186326AA583F00A3F45D /* ViewControllers */,
-				656A186B26AA587300A3F45D /* Helpers */,
 				656A187226AA58A300A3F45D /* Assets.xcassets */,
 				656A185B26AA57D400A3F45D /* Info.plist */,
 			);
@@ -112,39 +146,41 @@
 			isa = PBXGroup;
 			children = (
 				656A186926AA586E00A3F45D /* ChatVC.swift */,
-				656A186426AA584F00A3F45D /* CellVC */,
+				656A186426AA584F00A3F45D /* CallVC */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		656A186426AA584F00A3F45D /* CellVC */ = {
+		656A186426AA584F00A3F45D /* CallVC */ = {
 			isa = PBXGroup;
 			children = (
 				656A186626AA585A00A3F45D /* CallVC.swift */,
 				656A186526AA585900A3F45D /* CallViewModel.swift */,
 			);
-			path = CellVC;
+			path = CallVC;
 			sourceTree = "<group>";
 		};
 		656A186B26AA587300A3F45D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				656A187626AA5AB800A3F45D /* CallKit */,
-				656A187026AA589000A3F45D /* Int+Extension.swift */,
 				656A186C26AA587C00A3F45D /* AppID.swift */,
+				65C76BA926C063940010BDDB /* Extensions */,
+				656A187926AA5AD200A3F45D /* CallManager.swift */,
+				65CB35E426BD40900024ECBC /* PushApiManager.swift */,
 				656A186D26AA587C00A3F45D /* Reachability.swift */,
+				65CB35F726BD5BF80024ECBC /* ChannelNameGenerator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		656A187626AA5AB800A3F45D /* CallKit */ = {
+		65C76BA926C063940010BDDB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				656A187B26AA5AE300A3F45D /* SoundManager.swift */,
-				656A187926AA5AD200A3F45D /* CallManager.swift */,
-				656A187726AA5AC200A3F45D /* Call.swift */,
+				65C76BAA26C063A80010BDDB /* UIApplication+Extension.swift */,
+				656A187026AA589000A3F45D /* Int+Extension.swift */,
+				65C76BA626C04E3A0010BDDB /* Data+Extension.swift */,
 			);
-			path = CallKit;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +195,7 @@
 				656A184726AA57D100A3F45D /* Frameworks */,
 				656A184826AA57D100A3F45D /* Resources */,
 				0DE69A81337F448C46160DA2 /* [CP] Embed Pods Frameworks */,
+				65CB35F326BD5AEE0024ECBC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -262,15 +299,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				656A186F26AA587C00A3F45D /* Reachability.swift in Sources */,
+				65C76BA726C04E3A0010BDDB /* Data+Extension.swift in Sources */,
 				656A187126AA589000A3F45D /* Int+Extension.swift in Sources */,
 				656A187A26AA5AD200A3F45D /* CallManager.swift in Sources */,
 				656A186E26AA587C00A3F45D /* AppID.swift in Sources */,
-				656A187C26AA5AE300A3F45D /* SoundManager.swift in Sources */,
 				656A186826AA585A00A3F45D /* CallVC.swift in Sources */,
 				656A186726AA585A00A3F45D /* CallViewModel.swift in Sources */,
 				656A184E26AA57D100A3F45D /* AppDelegate.swift in Sources */,
-				656A187826AA5AC200A3F45D /* Call.swift in Sources */,
+				65CB35E526BD40900024ECBC /* PushApiManager.swift in Sources */,
+				65CB35F826BD5BF80024ECBC /* ChannelNameGenerator.swift in Sources */,
+				6505161B26C1F75000879532 /* AppDelegate+Extension.swift in Sources */,
 				656A185026AA57D100A3F45D /* SceneDelegate.swift in Sources */,
+				65C76BAB26C063A80010BDDB /* UIApplication+Extension.swift in Sources */,
 				656A186A26AA586E00A3F45D /* ChatVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,10 +449,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BE61A33A82B79714988759F /* Pods-AgoraCall.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AgoraCall/AgoraCall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = KFQW6683CD;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = AgoraCall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -430,10 +475,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E26E57908B42E5F34FECCA46 /* Pods-AgoraCall.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AgoraCall/AgoraCall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = KFQW6683CD;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = AgoraCall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

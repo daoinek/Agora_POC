@@ -23,7 +23,7 @@ class CallViewModel: NSObject {
     }
     
     func initializeAgoraEngine() {
-        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: AppID, delegate: vc as? AgoraRtcEngineDelegate)
+        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: Auth.app_id, delegate: vc as? AgoraRtcEngineDelegate)
     }
     
     func setupVideo() {
@@ -50,7 +50,7 @@ class CallViewModel: NSObject {
     
     func joinChannel(withId channelId: String, _ callback:@escaping() -> Void) {
         agoraKit.setDefaultAudioRouteToSpeakerphone(true)
-        agoraKit.joinChannel(byToken: Token, channelId: channelId, info: nil, uid: 0) { (channel, uid, elapsed) -> Void in
+        agoraKit.joinChannel(byToken: Auth.token, channelId: channelId, info: nil, uid: 0) { (channel, uid, elapsed) -> Void in
             callback()
         }
     }

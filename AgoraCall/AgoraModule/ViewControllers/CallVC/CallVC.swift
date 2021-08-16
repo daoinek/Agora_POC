@@ -12,7 +12,6 @@ import AgoraRtcKit
 
 class CallVC: UIViewController {
     
-    
     //MARK: Outlets
     @IBOutlet weak var localContainer: UIView!
     @IBOutlet weak var remoteContainer: UIView!
@@ -23,7 +22,6 @@ class CallVC: UIViewController {
     @IBOutlet weak var videoButton: UIButton!
     @IBOutlet weak var connectionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-
     
     //MARK:- Variables
     private var viewModel: CallViewModel!
@@ -31,6 +29,7 @@ class CallVC: UIViewController {
     private var timer: Timer?
     private var callTime: Int = 0
     private var remoteUid: UInt = 0
+    private var userWasConnected = false
     private var isRemoteVideoRender: Bool = true {
         didSet {
             if let it = viewModel.localVideo, let view = it.view {
@@ -63,6 +62,8 @@ class CallVC: UIViewController {
         }
     }
     
+    var channelName: String?
+    
     
     //MARK:- Methods
     override func viewDidLoad() {
@@ -71,7 +72,11 @@ class CallVC: UIViewController {
         viewModel.initializeAgoraEngine()
         viewModel.setupVideo()
         viewModel.setupLocalVideo(in: localContainer)
-        joinChannel(withId: "POC")
+        self.joinChannel(withId: "demo-channel")
+     /*   PushApiManager.getCallToken(Auth.currenUserId, room: channelName ?? "POC") { token in
+            Auth.token = token ?? ""
+            self.joinChannel(withId: "demo-channel") // self.channelName ?? "POC")
+        } */
     }
     
     
@@ -91,6 +96,7 @@ class CallVC: UIViewController {
         isLocalVideoRender = false
         isStartCalling = false
         UIApplication.shared.isIdleTimerDisabled = false
+        CallManager.shared.endIncomingCall()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.dismiss(animated: true, completion: nil)
         }
@@ -140,9 +146,11 @@ class CallVC: UIViewController {
             viewModel.localVideo = nil
             removeFromParent(viewModel.remoteVideo)
             viewModel.remoteVideo = nil
+            if !userWasConnected { PushApiManager.endCall(withId: CallManager.shared.callId ?? 0) }
         } else {
             viewModel.setupLocalVideo(in: localContainer)
-            joinChannel(withId: "POC")
+            joinChannel(withId: "demo-channel") // channelName ?? "POC")
+         //   joinChannel(withId: "POC")
         }
     }
     
@@ -199,6 +207,7 @@ extension CallVC: AgoraRtcEngineDelegate {
             return
         }
         self.remoteUid = uid
+        self.userWasConnected = true
         viewModel.rtcEngine(didJoinedOfUid: uid, parent: parent)
     }
     
